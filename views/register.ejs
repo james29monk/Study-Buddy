@@ -9,10 +9,15 @@
 <body>
     <div class="content">
         <div class="imgContainer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png" alt="logo"></div>
+        <img src="" alt="logo"></div>
 <form class="container" action="/register" method="post">
 <div class="form">
     <legend> Create account </legend>
+    <% if (typeof successMessage !=='undefined' ) { %>
+        <p style="color: green;">
+            <%= successMessage %>
+        </p>
+        <% } %>
     <% { %>
         <div class="name">
         First name <input type="text" name="firstName"/><br><br></div>
@@ -25,7 +30,7 @@
         <div class="password2">
         Re-enter password <input type="password" name = "repassword"  minlength="8" value = "" /> <br><br></div>
     <% } %>
-    <button onclick="">Create your IMDb account</button>
+    <button onclick="">Create your registration account</button>
     <div class="line"></div>
     <p class="account">Already have an account? <a href="https://registration-52fc.onrender.com/login">Sign in</a></p>
 </div>
@@ -33,6 +38,5 @@
 <div class="line2"></div>  
  
 </div>
-  
 </body>
 </html>
