@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/styles'));
 const path = require('path')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
+const port = 3001
 
 
 const logger = winston.createLogger({
@@ -57,13 +58,13 @@ app.post('/register', async (req, res) => {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            password: hashedPassword, // Store the hashed password
-            repassword: hashedPassword, // Store the hashed password
+            password: hashedPassword,
+            repassword: hashedPassword, 
         });
 
 
 
-        return res.render('register', { success: 'Account created successfully' });
+        res.render('register', { successMessage: 'Account created successfully' });
     } catch (error) {
         console.error('Error creating user:', error);
         res.status(500).render('register', { error: 'Failed to create user' });
@@ -106,6 +107,8 @@ app.post('/login', async (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('server is running 3000')
+
+
+app.listen(port, () => {
+    console.log('server is running 3001')
 })
