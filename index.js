@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/styles'));
 const path = require('path')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
-const port = 3002
+const port = 3001
 
 
 const logger = winston.createLogger({
@@ -75,7 +75,7 @@ app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     // Check if email and password are provided
   if (!email || !password) {
-    return res.status(400).send('Email and password are required');
+    return res.status(400).render('login',{error:'Email and password are required'});
   }
 
   try {
@@ -83,7 +83,7 @@ app.post('/login', async (req, res) => {
     const user = await User.findOne({ where: { email: email } });
 
     if (!user) {
-      return res.status(401).send('Invalid email or password');
+      return res.status(401).render('login',{error:'Invalid email or password'});
     }
 
     // Compare the provided password with the hashed password from the database
@@ -95,11 +95,11 @@ app.post('/login', async (req, res) => {
       return res.render('home');
     } else {
       // Passwords don't match, authentication failed
-      return res.status(401).send('Invalid email or password');
+      return res.status(401).render('login',{error:'Invalid email or password'});
     }
   } catch (error) {
     console.error('Error while logging in:', error);
-    res.status(500).send('Internal server error');
+    res.status(500).render('login',{error:'Internal server error'});
   }
 });
 
