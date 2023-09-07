@@ -673,3 +673,4 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:27:01 AM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:37:06 AM","url":"/"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:37:15 AM","url":"/"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 3:56:25 PM","url":"/login"},"service":"user-service"}
