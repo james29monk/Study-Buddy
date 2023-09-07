@@ -9,7 +9,8 @@ app.use(express.static(__dirname + '/styles'));
 const path = require('path')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
-const port = 3001
+const port = 3000
+
 
 
 const logger = winston.createLogger({
@@ -18,20 +19,20 @@ const logger = winston.createLogger({
     defaultMeta: { service: 'user-service' },
     transports: [
 
-      new winston.transports.File({ filename: 'error.log', level: 'error' }),
-      new winston.transports.File({ filename: 'combined.log' }),
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' }),
     ],
-  });
+});
 
 
-  app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     logger.info({
         level: 'info',
-        method:req.method,
-        body:req.body,
-        url:req.url,
-        parameters:req.params,
-        timestamp:new Date().toLocaleString()
+        method: req.method,
+        body: req.body,
+        url: req.url,
+        parameters: req.params,
+        timestamp: new Date().toLocaleString()
     })
     res.render('register')
 })
@@ -39,19 +40,38 @@ const logger = winston.createLogger({
 app.get('/login', (req, res) => {
     logger.info({
         level: 'info',
-        method:req.method,
-        body:req.body,
-        url:req.url,
-        parameters:req.params,
-        timestamp:new Date().toLocaleString()
+        method: req.method,
+        body: req.body,
+        url: req.url,
+        parameters: req.params,
+        timestamp: new Date().toLocaleString()
     })
     res.render('login')
-  })
+})
 
 app.post('/register', async (req, res) => {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, repassword } = req.body;
+    
+// Check if firstName and lastName contain only letters
+    const nameRegex = /^[A-Za-z]+$/; // This regex allows only letters (both upper and lower case)
+
+    if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+         return res.status(400).render('register', { failedMessage: 'First name and last name must contain only letters' });
+    }
+
+// Password must match repassword
+    if (password !== repassword) {
+        return res.status(400).render('register', {failedMessage: 'Password do not match'} );
+    }
+//Email existing
+    const existingEmail = await User.findOne({ where: { email: email } });
+
+  if (existingEmail) {
+    return res.status(400).send('Email already registered');
+    
+  }
     try {
-        const saltRounds = 10; 
+        const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
         await User.create({
@@ -59,10 +79,16 @@ app.post('/register', async (req, res) => {
             lastName: lastName,
             email: email,
             password: hashedPassword,
-            repassword: hashedPassword, 
+            repassword: hashedPassword,
         });
-
-
+        logger.info({
+            level: 'info',
+            method: req.method,
+            body: req.body,
+            url: req.url,
+            parameters: req.params,
+            timestamp: new Date().toLocaleString(),
+          });
 
         res.render('register', { successMessage: 'Account created successfully' });
     } catch (error) {
@@ -78,19 +104,15 @@ app.post('/login', async (req, res) => {
     return res.status(400).render('login',{error:'Email and password are required'});
   }
 
-  try {
-    // Find a user in the database by their email
-    const user = await User.findOne({ where: { email: email } });
+    try {
+        const user = await User.findOne({ where: { email: email } });
 
     if (!user) {
       return res.status(401).render('login',{error:'Invalid email or password'});
     }
+        const passwordMatch = await bcrypt.compare(password, user.password);
 
-    // Compare the provided password with the hashed password from the database
-    const passwordMatch = await bcrypt.compare(password, user.password);
-
-    if (passwordMatch) {
-      // Passwords match, so authentication is successful
+        if (passwordMatch) {
 
       return res.render('home');
     } else {
@@ -110,5 +132,5 @@ app.post('/login', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log('server is running 3001')
+    console.log('server is running 3000')
 })
