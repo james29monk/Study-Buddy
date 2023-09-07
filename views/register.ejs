@@ -18,6 +18,11 @@
             <%= successMessage %>
         </p>
         <% } %>
+     <% if (typeof failedMessage !=='undefined' ) { %>
+            <p style="color: rgb(247, 24, 8);">
+                <%= failedMessage %>
+            </p>
+            <% } %>
     <% { %>
         <div class="name">
         First name <input required type="text" name="firstName" maxlength="26"/><br><br></div>
@@ -26,13 +31,14 @@
         <div class="email">
         Email <input required type="email" name="email" value="" /><br><br></div>
         <div class="password">
-        Password <input required type="password" placeholder="at least 8 characters" minlength="8" maxlength="25" name="password" value="" /><br><br><p class="passConstraint">Passwords must be at least 8 characters.</p></div>
+        Password <input required type="password" placeholder="at least 8 characters" minlength="8" maxlength="50" name="password" value="" /><br><br><p class="passConstraint">Passwords must be at least 8 characters.</p></div>
         <div class="password2">
         Re-enter password <input required type="password" name = "repassword"  minlength="8" value = "" /> <br><br></div>
     <% } %>
+
     <button onclick="">Create your registration account</button>
     <div class="line"></div>
-    <p class="account">Already have an account? <a href="login.ejs">Sign in</a></p>
+    <p class="account">Already have an account? <a href="http://localhost:3000/login">Sign in</a></p>
 </div>
 </form>
 <div class="line2"></div>  

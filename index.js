@@ -50,13 +50,17 @@ app.get('/login', (req, res) => {
 
 app.post('/register', async (req, res) => {
     const { firstName, lastName, email, password, repassword } = req.body;
+    
+// Check if firstName and lastName contain only letters
+    const nameRegex = /^[A-Za-z]+$/; // This regex allows only letters (both upper and lower case)
 
-    if (!firstName || !lastName || !email || !password || !repassword) {
-        return res.status(400).render('register', { failMessage: 'All fields are required' });
+    if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+         return res.status(400).render('register', { failedMessage: 'First name and last name must contain only letters' });
     }
+
 // Password must match repassword
     if (password !== repassword) {
-        return res.status(400).send('Passwords do not match');
+        return res.status(400).render('register', {failedMessage: 'Password do not match'} );
     }
 //Email existing
     const existingEmail = await User.findOne({ where: { email: email } });
@@ -76,6 +80,14 @@ app.post('/register', async (req, res) => {
             password: hashedPassword,
             repassword: hashedPassword,
         });
+        logger.info({
+            level: 'info',
+            method: req.method,
+            body: req.body,
+            url: req.url,
+            parameters: req.params,
+            timestamp: new Date().toLocaleString(),
+          });
 
         res.render('register', { successMessage: 'Account created successfully' });
     } catch (error) {
