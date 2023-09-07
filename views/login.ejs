@@ -6,33 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
 </head>
-<body>
-    <div class="content">
-        <div class="imgContainer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png" alt="logo"></div>
-<form class="container" action="/login" method="post">
-<div class="form">
+<div class ="backgroundblr">
+    <body>
+        <div class="content">
+        
+            <div class="logo"> 
+                <p class ="study">Study</p><p class= "buddy"> Buddy</p>
+            </div>
+        <form class="container" action="/login" method="post">
+        <div class="form">
+     <fieldset>
     <legend> Sign in </legend>
     <% { %>
         <div class="email">
-        Email <input type="email" name="email" value="" /><br><br></div>
+        <input  class="emailBox" type="email" name="email" placeholder="Email" /><br><br></div>
         <div class="password">
-        Password <input type="password" minlength="8" maxlength="25" name="password" value="" /><br><br></div>
+        <input class="passwordBox" type="password" minlength="8" maxlength="25" name="password" placeholder="Password" /><br><br></div>
     <% } %>
     <button onclick="">Sign in</button>
     <div class="line"></div>
-    <p class="account">Need to create an account?. <a href="https://registration-52fc.onrender.com/login">Details</a></p>
+    <p class="account">Need to create an account?. <a href="register.ejs" style="color: rgb(45, 112, 226);">Create Account</a></p>
 </div>
-
-</form>
-<div class="line2"></div>  
-<div class="footer">
-    <a href="https://help.imdb.com/article/imdb/general-information/why-should-i-register-on-imdb/GHB62T7USTMYMCDC?ref_=cons_ap_ftr_help#">Help</a>
-    <a href="https://www.imdb.com/conditions">Conditions of Use</a>
-    <a href="https://www.imdb.com/privacy">Privacy Notice</a>
+            </fieldset>
+        </form>
+    </body>
 </div>
-<p class="copyright">© 1996-2023, Amazon.com, Inc. or its affiliates<p>
-</div>
-  
-</body>
 </html>

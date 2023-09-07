@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/styles'));
 const path = require('path')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
-const port = 3001
+const port = 3002
 
 
 const logger = winston.createLogger({
@@ -92,7 +92,7 @@ app.post('/login', async (req, res) => {
     if (passwordMatch) {
       // Passwords match, so authentication is successful
 
-      return res.send('Login successful');
+      return res.render('home');
     } else {
       // Passwords don't match, authentication failed
       return res.status(401).send('Invalid email or password');
