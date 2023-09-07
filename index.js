@@ -23,10 +23,22 @@ const logger = winston.createLogger({
         new winston.transports.File({ filename: 'combined.log' }),
     ],
 });
-app.get('/',async(req,res)=>{
+app.get('/users',async(req,res)=>{
     const allUsers = await User.findAll()
     res.send(allUsers)
-  })
+});
+
+app.get('/questions',async(req,res)=>{
+    const allQuest = await questions.findAll()
+res.send(allQuest)
+});
+
+app.get('/home', (req, res) => {
+    res.render('home')
+})
+
+
+
 
 app.get('/register', (req, res) => {
     logger.info({
@@ -161,6 +173,7 @@ app.post('/login', async (req, res) => {
     res.status(500).render('login',{errors:'Internal server error'});
   }
 });
+
 app.get('/flashcards', async (req,res)=>{
    
      const flashcardInfo = await flashcards.findOne({
@@ -175,7 +188,6 @@ app.post('/flashcards', async (req,res)=>{
         questions: question,
         answers: answer
     })
-
 
     console.log(cardInfo.id)
 })
