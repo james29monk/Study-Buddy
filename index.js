@@ -102,13 +102,15 @@ app.post('/login', async (req, res) => {
 
         if (passwordMatch) {
 
-            return res.send('Login successful');
-        } else {
-            return res.status(401).send('Invalid email or password');
-        }
-    } catch (error) {
-        console.error('Error while logging in:', error);
+      return res.render('home');
+    } else {
+      // Passwords don't match, authentication failed
+      return res.status(401).send('Invalid email or password');
     }
+  } catch (error) {
+    console.error('Error while logging in:', error);
+    res.status(500).send('Internal server error');
+  }
 });
 
 
