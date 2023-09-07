@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const winston = require("winston");
 const bcrypt = require('bcrypt')
-const { User, Categories, scores, games, questions } = require('./models')
+const { User } = require('./models')
 app.use(express.json())
 app.use(express.static(__dirname + '/styles'));
 const path = require('path')
@@ -23,7 +23,10 @@ const logger = winston.createLogger({
         new winston.transports.File({ filename: 'combined.log' }),
     ],
 });
-
+app.get('/',async(req,res)=>{
+    const allUsers = await User.findAll()
+    res.send(allUsers)
+  })
 
 app.get('/register', (req, res) => {
     logger.info({
@@ -36,6 +39,7 @@ app.get('/register', (req, res) => {
     })
     res.render('register')
 })
+
 
 app.get('/login', (req, res) => {
     logger.info({
