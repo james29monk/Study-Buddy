@@ -20,15 +20,15 @@
         <% } %>
     <% { %>
         <div class="name">
-        First name <input type="text" name="firstName"/><br><br></div>
+        First name <input required type="text" name="firstName" maxlength="26"/><br><br></div>
         <div class="name">
-        Last name <input type="text" name="lastName"/><br><br></div>
+        Last name <input required type="text" name="lastName" maxlength="26"/><br><br></div>
         <div class="email">
-        Email <input type="email" name="email" value="" /><br><br></div>
+        Email <input required type="email" name="email" value="" /><br><br></div>
         <div class="password">
-        Password <input type="password" placeholder="at least 8 characters" minlength="8" maxlength="25" name="password" value="" /><br><br><p class="passConstraint">Passwords must be at least 8 characters.</p></div>
+        Password <input required type="password" placeholder="at least 8 characters" minlength="8" maxlength="25" name="password" value="" /><br><br><p class="passConstraint">Passwords must be at least 8 characters.</p></div>
         <div class="password2">
-        Re-enter password <input type="password" name = "repassword"  minlength="8" value = "" /> <br><br></div>
+        Re-enter password <input required type="password" name = "repassword"  minlength="8" value = "" /> <br><br></div>
     <% } %>
     <button onclick="">Create your registration account</button>
     <div class="line"></div>

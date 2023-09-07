@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/styles'));
 const path = require('path')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
-const port = 3001
+const port = 3000
 
 
 const logger = winston.createLogger({
@@ -18,20 +18,20 @@ const logger = winston.createLogger({
     defaultMeta: { service: 'user-service' },
     transports: [
 
-      new winston.transports.File({ filename: 'error.log', level: 'error' }),
-      new winston.transports.File({ filename: 'combined.log' }),
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' }),
     ],
-  });
+});
 
 
-  app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     logger.info({
         level: 'info',
-        method:req.method,
-        body:req.body,
-        url:req.url,
-        parameters:req.params,
-        timestamp:new Date().toLocaleString()
+        method: req.method,
+        body: req.body,
+        url: req.url,
+        parameters: req.params,
+        timestamp: new Date().toLocaleString()
     })
     res.render('register')
 })
@@ -39,19 +39,34 @@ const logger = winston.createLogger({
 app.get('/login', (req, res) => {
     logger.info({
         level: 'info',
-        method:req.method,
-        body:req.body,
-        url:req.url,
-        parameters:req.params,
-        timestamp:new Date().toLocaleString()
+        method: req.method,
+        body: req.body,
+        url: req.url,
+        parameters: req.params,
+        timestamp: new Date().toLocaleString()
     })
     res.render('login')
-  })
+})
 
 app.post('/register', async (req, res) => {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, repassword } = req.body;
+
+    if (!firstName || !lastName || !email || !password || !repassword) {
+        return res.status(400).render('register', { failMessage: 'All fields are required' });
+    }
+// Password must match repassword
+    if (password !== repassword) {
+        return res.status(400).send('Passwords do not match');
+    }
+//Email existing
+    const existingEmail = await User.findOne({ where: { email: email } });
+
+  if (existingEmail) {
+    return res.status(400).send('Email already registered');
+    
+  }
     try {
-        const saltRounds = 10; 
+        const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
         await User.create({
@@ -59,10 +74,8 @@ app.post('/register', async (req, res) => {
             lastName: lastName,
             email: email,
             password: hashedPassword,
-            repassword: hashedPassword, 
+            repassword: hashedPassword,
         });
-
-
 
         res.render('register', { successMessage: 'Account created successfully' });
     } catch (error) {
@@ -74,33 +87,28 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     // Check if email and password are provided
-  if (!email || !password) {
-    return res.status(400).send('Email and password are required');
-  }
-
-  try {
-    // Find a user in the database by their email
-    const user = await User.findOne({ where: { email: email } });
-
-    if (!user) {
-      return res.status(401).send('Invalid email or password');
+    if (!email || !password) {
+        return res.status(400).send('Email and password are required');
     }
 
-    // Compare the provided password with the hashed password from the database
-    const passwordMatch = await bcrypt.compare(password, user.password);
+    try {
+        const user = await User.findOne({ where: { email: email } });
 
-    if (passwordMatch) {
-      // Passwords match, so authentication is successful
+        if (!user) {
+            return res.status(401).send('Invalid email or password');
+        }
 
-      return res.send('Login successful');
-    } else {
-      // Passwords don't match, authentication failed
-      return res.status(401).send('Invalid email or password');
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if (passwordMatch) {
+
+            return res.send('Login successful');
+        } else {
+            return res.status(401).send('Invalid email or password');
+        }
+    } catch (error) {
+        console.error('Error while logging in:', error);
     }
-  } catch (error) {
-    console.error('Error while logging in:', error);
-    res.status(500).send('Internal server error');
-  }
 });
 
 
@@ -110,5 +118,5 @@ app.post('/login', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log('server is running 3001')
+    console.log('server is running 3000')
 })
