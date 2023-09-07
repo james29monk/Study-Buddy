@@ -630,16 +630,4 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:11:22 AM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:11:27 AM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:12:20 AM","url":"/login"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:40:17 AM","url":"/login"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:47:16 AM","url":"/"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:57:03 AM","url":"/"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:57:56 AM","url":"/"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:58:28 AM","url":"/"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 9:59:20 AM","url":"/login"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 10:00:08 AM","url":"/"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 10:00:11 AM","url":"/login"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 10:02:19 AM","url":"/"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 10:06:00 AM","url":"/login"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 10:06:03 AM","url":"/login"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 10:06:24 AM","url":"/login"},"service":"user-service"}
-{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 10:06:43 AM","url":"/"},"service":"user-service"}
+
