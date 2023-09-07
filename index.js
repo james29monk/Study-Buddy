@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const winston = require("winston");
 const bcrypt = require('bcrypt')
-const { User } = require('./models')
+const { User, questions, Categories, games, scores } = require('./models')
 app.use(express.json())
 app.use(express.static(__dirname + '/styles'));
 const path = require('path')
@@ -26,6 +26,11 @@ const logger = winston.createLogger({
 app.get('/',async(req,res)=>{
     const allUsers = await User.findAll()
     res.send(allUsers)
+  })
+
+app.get('/question',async(req,res)=>{
+    const allQuest = await questions.findAll()
+    res.send(allQuest)
   })
 
 app.get('/register', (req, res) => {
@@ -161,7 +166,6 @@ app.post('/login', async (req, res) => {
     res.status(500).render('login',{errors:'Internal server error'});
   }
 });
-
 
 
 
