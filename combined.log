@@ -674,3 +674,5 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:37:06 AM","url":"/"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:37:15 AM","url":"/"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 3:56:25 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 5:06:28 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 5:07:37 PM","url":"/login"},"service":"user-service"}

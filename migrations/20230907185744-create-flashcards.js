@@ -15,12 +15,21 @@ module.exports = {
       answers: {
         type: Sequelize.STRING
       },
+      user_id:{
+        type:Sequelize.INTEGER,
+        references:{
+          model:'Users',
+          key:'id'
+        },
+        allowNull:false
+
+      },
       createdAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
     });

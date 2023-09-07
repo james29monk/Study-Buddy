@@ -167,17 +167,20 @@ app.get('/flashcards', async (req,res)=>{
         where: {id: 7}
     })
 
-    res.render('flashcards', {questions:flashcardInfo})
+    res.render('flashcards', {questions: 'flashcardInfo'})
 })
 app.post('/flashcards', async (req,res)=>{
+    const user_id = await User.findOne({where:{id:1}})
     const {question, answer} = req.body;
     const cardInfo = await flashcards.create({
         questions: question,
-        answers: answer
+        answers: answer,
+        user_id: 1
+
     })
 
 
-    console.log(cardInfo.id)
+
 })
 
 

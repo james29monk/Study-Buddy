@@ -10,12 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      flashcards.belongsTo(models.User || models.Users,{
+        foreignKey:'user_id'
+      })
     }
   }
   flashcards.init({
     questions: DataTypes.STRING,
-    answers: DataTypes.STRING
+    answers: DataTypes.STRING,
+    user_id:DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'flashcards',
