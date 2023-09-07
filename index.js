@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const winston = require("winston");
 const bcrypt = require('bcrypt')
-const { User, Categories, scores, games, questions } = require('./models')
+const { User, Categories, scores, games, questions, flashcards } = require('./models')
 app.use(express.json())
 app.use(express.static(__dirname + '/styles'));
 const path = require('path')
@@ -157,9 +157,24 @@ app.post('/login', async (req, res) => {
     res.status(500).render('login',{errors:'Internal server error'});
   }
 });
+app.get('/flashcards', async (req,res)=>{
+   
+     const flashcardInfo = await flashcards.findOne({
+        where: {id: 7}
+    })
+
+    res.render('flashcards', {questions:flashcardInfo})
+})
+app.post('/flashcards', async (req,res)=>{
+    const {question, answer} = req.body;
+    const cardInfo = await flashcards.create({
+        questions: question,
+        answers: answer
+    })
 
 
-
+    console.log(cardInfo.id)
+})
 
 
 
