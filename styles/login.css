@@ -1,132 +1,92 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-image: url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2942&q=80);
+    background-repeat: no-repeat;
+    background-size:cover;
     /* margin: 0; */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin-left: 50%;
-    margin-right: 50%;
+   
+    
+ 
+}
+
+fieldset{height:300px;
+    width: 400px;
+margin-left: 850px;
+margin-top: 100px;
+margin-bottom: 150px;
+background-color:rgba(0, 0, 0, 0.6);
+border-radius: 25px;
+
+}
+
+.email{
+    margin-top: 40px;
+    margin-left: 10px;
+}
+legend{font-size: 30px;
+color: rgb(255, 255, 255);}
+
+
+
+.emailBox{margin-left: -10px;
+height: 40px;
+width: 102.5%;
+border-radius: 10px;}
+.passwordBox{height: 40px;
+width:100%;
+border-radius: 10px;}
+
+button{
+    font-size: 25px;
+    color: aliceblue;
+    background-color: blue;
+    height: 40px;
+width:100%;
+border-radius: 10px;
+}
+.logo{
+    font-family:Brush Script MT, Brush Script Std, cursive ;
+   color: #010057;
+  position: absolute;
+    font-size: 200px;
+    
+}
+
+.study{
+    position: absolute;
+    top: -150px;
+    left: -50px;
+    margin: 0;
   
-  }
-  
-  .login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button {
-    /* background-color: #daba17f1; */
-    background-color: #f0cc4b;
-    color: rgb(0, 0, 0);
-    /* padding: 10px 20px; */
-    border: none;
-    border-radius: 8px;
-    width: 312px;
-    cursor: pointer;
-    padding: 0.5em;
-    margin-top: -1em;
-    /* border-color: #a88734 #9c7e31 #846a29;; */
-  }
-  
-  button:hover {
-    background-color: #debf12;
-  }
-  .container{
-    border: solid rgba(114, 114, 114, 0.373) 1px;
-    border-radius: 2%;
-    display: flex;
-    width: 35vw;
-    height: 55vh;
-   justify-content: center;
-  
-  }
-  img{
-    width: 107px;
-    height: 52px;
-  }
-  .imgContainer{
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1em;
-  }
-  legend{
-    font-size: 30px;
-    margin: 0.5em;
-  }
-  .content{
-    margin-top: -13em;
-    /* border: solid rgb(123, 73, 73) 3px; */
-    display: inline;
-    align-content: center;
-    justify-content: center;
-  }
-  .name, .email, .password, .password2{
-    display: grid;
-    line-height: 15px;
-    font-size: 12px;
-    font-weight: 700;
-    width: 312px;
-  }
-  .line{
-    margin-top: 0.7em;
-    border: solid rgba(215, 201, 201, 0.733) 0.6px;
-  }
-  p{
-    font-size: 12px;
-  }
-  .pConstraints{
-    font-weight: 200;
-    margin-top: -2em;
-    margin-bottom: 2em;
-    display: flex;
-  }
-  .infoIcon{
-    width: 14px;
-    height: auto;
-  }
-  .account{
-    margin-top: 2em;
-  }
-  .line2{
-    margin-top: 0.7em;
-    border: solid rgba(215, 201, 201, 0.733) 0.6px;
-  }
-  .footer{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-size: 11px;
-  margin-top: 2em;
-  
-  }
-  a{
-    text-decoration: none;
-  }
-  .copyright{
-    text-align: center !important;
-  }
-  
+}
+.buddy{
+position: absolute;
+left:200px;
+top: 1px;
+margin: 0;
+}
+.account{color: #ffffff;}
+@media(max-width:1000px){
+    legend{color: aliceblue;}
+    .study{font-size: 130px;
+        top: -300px;
+        left: 50px;
+        color: aliceblue;}
+    .buddy{
+        top: -200px;
+        font-size: 130px;
+        color: aliceblue;}
+
+
+   fieldset{padding: 5px;
+    margin-top: 100%;
+    margin-left: 10%;
+    margin-right: 20%;
+    }
+    body{margin: auto;
+        background-image: none;
+        background-color: blue;}
+}
