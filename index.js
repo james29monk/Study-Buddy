@@ -23,7 +23,10 @@ const logger = winston.createLogger({
         new winston.transports.File({ filename: 'combined.log' }),
     ],
 });
-
+app.get('/',async(req,res)=>{
+    const allUsers = await User.findAll()
+    res.send(allUsers)
+  })
 
 app.get('/register', (req, res) => {
     logger.info({
@@ -36,6 +39,7 @@ app.get('/register', (req, res) => {
     })
     res.render('register')
 })
+
 
 app.get('/login', (req, res) => {
     logger.info({
