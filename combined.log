@@ -671,3 +671,5 @@
 {"level":"info","message":{"body":{"email":"ethan@ethan.com","firstName":"Ethan","lastName":"Shulman","password":"Tonyislame1@","repassword":"Tonyislame1@"},"level":"info","method":"POST","parameters":{},"timestamp":"9/7/2023, 11:26:45 AM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:26:52 AM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:27:01 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:37:06 AM","url":"/"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 11:37:15 AM","url":"/"},"service":"user-service"}

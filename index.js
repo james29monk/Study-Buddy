@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const winston = require("winston");
 const bcrypt = require('bcrypt')
-const { User } = require('./models')
+const { User, Categories, scores, games, questions } = require('./models')
 app.use(express.json())
 app.use(express.static(__dirname + '/styles'));
 const path = require('path')
@@ -25,7 +25,7 @@ const logger = winston.createLogger({
 });
 
 
-app.get('/', (req, res) => {
+app.get('/register', (req, res) => {
     logger.info({
         level: 'info',
         method: req.method,
