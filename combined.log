@@ -713,3 +713,5 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 8:42:15 PM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 8:43:25 PM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 8:43:37 PM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 1:48:52 PM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{"email":"ianvoltaire4@gmail.com","firstName":"ian","lastName":"voltaire","password":"Lots5478!","repassword":"Lots5478!"},"level":"info","method":"POST","parameters":{},"timestamp":"9/8/2023, 1:50:24 PM","url":"/register"},"service":"user-service"}
