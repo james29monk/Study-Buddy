@@ -9,10 +9,10 @@
 <body>
     <div class="content">
         <div class="imgContainer">
-        <img src="" alt="logo"></div>
 <form class="container" action="/register" method="post">
 <div class="form">
-    <legend> Create account </legend>
+    <fieldset>
+    <legend> Study buddy </legend>
     <% if (typeof successMessage !=='undefined' ) { %>
         <p style="color: green;">
             <%= successMessage %>
@@ -25,20 +25,21 @@
             <% } %>
     <% { %>
         <div class="name">
-        First name <input required type="text" name="firstName" maxlength="26"/><br><br></div>
+        <input required type="text" name="firstName" maxlength="26" placeholder="First Name"/><br><br></div>
         <div class="name">
-        Last name <input required type="text" name="lastName" maxlength="26"/><br><br></div>
+        <input required type="text" name="lastName" maxlength="26" placeholder="Last Name"/><br><br></div>
         <div class="email">
-        Email <input required type="email" maxlength="50" name="email" value="" /><br><br></div>
+        <input required type="email" maxlength="50" name="email" placeholder="Email" /><br><br></div>
         <div class="password">
-        Password <input required type="password" placeholder="at least 8 characters " minlength="8" maxlength="50" name="password" value="" /><p class="passConstraint">Password must include at least one uppercase letter, one lowercase letter, one special character, and one number</p></div>
+        <input required type="password"  minlength="8" maxlength="50" name="password" placeholder="Password" /><p class="passConstraint" style="color: aliceblue;">Password must have a minimum of 8 characters, one uppercase letter, one lowercase letter, one special character, and one number</p></div>
         <div class="password2">
-        Re-enter password <input required type="password" name = "repassword"  minlength="8" value = "" /> <br><br></div>
+        <input required type="password" name = "repassword"  minlength="8" placeholder = "Re-enter password" /> <br><br></div>
     <% } %>
 
     <button onclick="">Create your registration account</button>
     <div class="line"></div>
-    <p class="account">Already have an account? <a href="http://localhost:3000/login">Sign in</a></p>
+    <p class="account" style="color: aliceblue;">Already have an account? <a href="http://localhost:3000/login" style="color: rgb(0, 191, 255);">Sign in</a></p>
+</fieldset>
 </div>
 </form>
 <div class="line2"></div>  

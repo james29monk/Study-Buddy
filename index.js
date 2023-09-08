@@ -150,14 +150,14 @@ app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     // Check if email and password are provided
   if (!email || !password) {
-    return res.status(400).render('login',{errors:'Email and password are required'});
+    return res.status(400).render('login',{failedMessage:'Email and password are required'});
   }
 
     try {
         const user = await User.findOne({ where: { email: email } });
 
     if (!user) {
-      return res.status(401).render('login',{errors:'Invalid email or password'});
+      return res.status(401).render('login',{failedMessage:'Invalid email or password'});
     }
         const passwordMatch = await bcrypt.compare(password, user.password);
 
@@ -166,11 +166,11 @@ app.post('/login', async (req, res) => {
       return res.render('home');
     } else {
       // Passwords don't match, authentication failed
-      return res.status(401).render('login',{errors:'Invalid email or password'});
+      return res.status(401).render('login',{failedMessage:'Invalid email or password'});
     }
   } catch (error) {
     console.error('Error while logging in:', error);
-    res.status(500).render('login',{errors:'Internal server error'});
+    res.status(500).render('login',{failedMessage:'Internal server error'});
   }
 });
 
