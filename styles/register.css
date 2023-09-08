@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-image: url(https://www.psychologicalscience.org/redesign/wp-content/uploads/2011/04/ThinkstockPhotos-504382222-1024x683.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
     /* margin: 0; */
     display: flex;
     justify-content: center;
@@ -38,8 +40,8 @@ body {
   
   button {
     /* background-color: #daba17f1; */
-    background-color: #f0cc4b;
-    color: rgb(0, 0, 0);
+    background-color:blue;
+    color: rgb(255, 255, 255);
     /* padding: 10px 20px; */
     border: none;
     border-radius: 8px;
@@ -54,27 +56,20 @@ body {
     background-color: #debf12;
   }
   .container{
-    border: solid rgba(114, 114, 114, 0.373) 1px;
-    border-radius: 2%;
     display: flex;
     width: 35vw;
     height: 55vh;
    justify-content: center;
   
   }
-  img{
-    width: 107px;
-    height: 52px;
-  }
-  .imgContainer{
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1em;
-  }
+ fieldset{
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+ }
   legend{
-    font-size: 30px;
+    font-family:Brush Script MT, Brush Script Std, cursive ;
+    color: #ffffff ;
+    font-size: 50px;
     margin: 0.5em;
   }
   .content{
@@ -111,10 +106,8 @@ body {
   .account{
     margin-top: 2em;
   }
-  .line2{
-    margin-top: 0.7em;
-    border: solid rgba(215, 201, 201, 0.733) 0.6px;
-  }
+
+  
   .footer{
   display: flex;
   align-items: center;

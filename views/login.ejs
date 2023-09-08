@@ -17,6 +17,11 @@
         <div class="form">
      <fieldset>
     <legend> Sign in </legend>
+    <% if (typeof failedMessage !=='undefined' ) { %>
+        <p style="color: rgb(247, 24, 8);">
+            <%= failedMessage %>
+        </p>
+        <% } %>
     <% { %>
         <div class="email">
         <input  class="emailBox" type="email" name="email" placeholder="Email" /><br><br></div>
