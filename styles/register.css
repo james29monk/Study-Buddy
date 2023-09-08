@@ -110,16 +110,39 @@ body {
   
   .footer{
   display: flex;
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
   align-items: center;
   justify-content: space-evenly;
   font-size: 11px;
   margin-top: 2em;
-  
-  }
-  a{
-    text-decoration: none;
-  }
-  .copyright{
-    text-align: center !important;
-  }
-  
+}
+
+a {
+  text-decoration: none;
+}
+
+.copyright {
+  text-align: center !important;
+}
+
+/* Center both horizontally and vertically */
+.name, .email, .password, .password2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text inside input fields */
+  margin-top: 20px; /* Add spacing between the fields */
+}
+
+/* Style the input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 300px; /* Adjust the width to your desired size */
+  margin-top: 10px; /* Add spacing between the fields */
+}
+
