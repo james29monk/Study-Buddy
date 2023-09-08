@@ -9,10 +9,10 @@
 <body>
     <div class="content">
         <div class="imgContainer">
-        <img src="" alt="logo"></div>
+        <img src="https://cdn4.iconfinder.com/data/icons/modern-education-3/128/131-512.png" alt="logo"></div>
 <form class="container" action="/register" method="post">
 <div class="form">
-    <legend> Create account </legend>
+    <legend style="font-weight: bold"> Create account </legend>
     <% if (typeof successMessage !=='undefined' ) { %>
         <p style="color: green;">
             <%= successMessage %>
@@ -36,7 +36,7 @@
         Re-enter password <input required type="password" name = "repassword"  minlength="8" value = "" /> <br><br></div>
     <% } %>
 
-    <button onclick="">Create your registration account</button>
+    <button onclick="" style="font-weight: bold;">Create your registration account</button>
     <div class="line"></div>
     <p class="account">Already have an account? <a href="http://localhost:3000/login">Sign in</a></p>
 </div>
