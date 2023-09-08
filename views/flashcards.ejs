@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="flashcards.css">
+    <link rel="stylesheet" href="/flashcards.css">
 </head>
 <body>
-    <form class="container" action="/flashcards" method="post">
-      
+    <form class="container" action="/flashcards/:id" method="post">
     <% { %>
         <div class="questions">
         <input  class="fquestion" type="text" name="question" placeholder="question" /><br><br></div>
         <div class="answer">
         <input class="passwordBox" type="text"  name="answer" placeholder="answer" /><br><br></div>
     <% } %>
-    <button onclick="">submit</button>
-   
-    <% if (typeof questions !=='undefined' ) { %>
-        <p>
-            <%= questions.questions %>
-            
-                </p>
-                <p><%= questions.answers %></p>
-                <% } %>
-
-                
-               
+    <button onclick="">submit</button>  
         </form>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <% cards.forEach(card => { %>
+                <% if (typeof card !== 'undefined') { %>
+                  <div class="flip-card-front">
+                    <p><%= card.dataValues.questions %></p>
+                  </div>
+                  <div class="flip-card-back">
+                    <p><%= card.dataValues.answers %></p>
+                  </div>
+                <% } %>
+              <% }); %>
+            </div>
+          </div>
+          
+
+         
+
+
 </body>
 </html>
+
+
+
