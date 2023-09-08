@@ -45,15 +45,23 @@ app.get('/game', (req, res) => {
 })
 
 app.get('/quiz', async (req, res) => {
-    let questionsList = []
-    const allQuestions = await questions.findAll()
-    console.log(allQuestions)
-    allQuestions.forEach(q=>{
-        questionsList.push(q.questions)
-    })
-    console.log(questionsList)
-    res.render('quiz', {qList: questionsList})
-})
+    try {
+        const questionsList = await questions.findAll();
+        const categoryList = await Categories.findAll();
+
+        console.log(questionsList);
+        console.log(categoryList);
+
+        res.render('quiz', { qList: questionsList, cList: categoryList });
+    } catch (err) {
+        console.error(err);
+        res.send('Error');
+    }
+});
+
+
+
+
 
 
 app.get('/register', (req, res) => {
