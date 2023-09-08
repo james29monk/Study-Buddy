@@ -733,3 +733,5 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:46:33 PM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:46:36 PM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:46:38 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:53:19 PM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:53:25 PM","url":"/login"},"service":"user-service"}

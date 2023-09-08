@@ -49,13 +49,10 @@ app.get('/quiz', async (req, res) => {
         const questionsList = await questions.findAll();
         const categoryList = await Categories.findAll();
 
-        console.log(questionsList);
-        console.log(categoryList);
-
         res.render('quiz', { qList: questionsList, cList: categoryList });
     } catch (err) {
         console.error(err);
-        res.send('Error');
+        res.send('error');
     }
 });
 
