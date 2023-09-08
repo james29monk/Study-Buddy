@@ -1,0 +1,65 @@
+.body{
+    background-image: url();
+}
+
+nav{
+
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    padding:10px 90px;
+    background: linear-gradient(45deg,rgba(255, 255, 255, 0.7), #010057);
+    border-bottom: 1px solid #000000;
+    z-index: 2;
+}
+    .logo{
+        font-family:Brush Script MT, Brush Script Std, cursive ;
+        padding-top: 10px;
+        height: 80px;
+        float: left;
+        font-size: 50px;
+        text-transform: uppercase;
+        color: #010057;
+    }
+    
+    ::-webkit-scrollbar{
+        width: 5px;
+        
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: rgb(0, 0, 0);
+        border-radius: 10px;
+    }
+    
+    .side-bar{
+    
+        display: flex;
+        position:fixed;
+        margin-top: 99px;
+        overflow: auto;
+        width: 3%;
+        height: 100%;
+        background:rgba(0,0,0,0.1);
+        flex-direction: column;
+        
+    }
+    .navlist{
+        list-style: none;
+        padding: 10%;
+
+    }
+    .navHeader{
+        display: flex;
+        justify-content: center;
+        color: rgb(0, 0, 0);
+font-size: 25px;
+
+    }
+.side-bar ul{
+display: flex;
+flex-direction: column;
+
+
+}

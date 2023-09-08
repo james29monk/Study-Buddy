@@ -1,110 +1,114 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #A8DF8E;
-  margin: 0; /* Reset margin */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Use min-height instead of height for responsiveness */
-}
-
-
-label {
-  font-weight: bold;
-}
-
-
-
-button {
-  background-color: rgb(111, 111, 251);
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 8px;
-  width: 100%; /* Use 100% width for responsiveness */
-  cursor: pointer;
-  padding: 0.5em;
-  margin-top: 10px; /* Adjust margin for spacing */
-}
-
-button:hover {
-  background-color: #debf12;
-}
-
-.container {
-  border: solid rgba(114, 114, 114, 0.373) 1px;
-  background-color: #F3FDE8;
-  border-radius: 2%;
-  display: flex;
-  max-width: 80%; /* Limit container width for responsiveness */
-  flex-direction: column; /* Adjust layout to stack elements on small screens */
-  align-items: center; /* Center content horizontally */
-  padding: 20px; /* Add some padding */
-  text-align: center;
-}
-
-img {
-  width: 107px;
-  height: 100px;
-  margin-right: 80px;
+    font-family: Arial, sans-serif;
+    background-image: url(https://www.psychologicalscience.org/redesign/wp-content/uploads/2011/04/ThinkstockPhotos-504382222-1024x683.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 50%;
+    margin-right: 50%;
   
-}
+  }
+  
+  .login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    /* background-color: #daba17f1; */
+    background-color:blue;
+    color: rgb(255, 255, 255);
+    /* padding: 10px 20px; */
+    border: none;
+    border-radius: 8px;
+    width: 312px;
+    cursor: pointer;
+    padding: 0.5em;
+    margin-top: -1em;
+    /* border-color: #a88734 #9c7e31 #846a29;; */
+  }
+  
+  button:hover {
+    background-color: #debf12;
+  }
+  .container{
+    display: flex;
+    width: 35vw;
+    height: 55vh;
+   justify-content: center;
+  
+  }
+ fieldset{
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+ }
+  legend{
+    font-family:Brush Script MT, Brush Script Std, cursive ;
+    color: #ffffff ;
+    font-size: 50px;
+    margin: 0.5em;
+  }
+  .content{
+    margin-top: -13em;
+    /* border: solid rgb(123, 73, 73) 3px; */
+    display: inline;
+    align-content: center;
+    justify-content: center;
+  }
+  .name, .email, .password, .password2{
+    display: grid;
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    width: 312px;
+  }
+  .line{
+    margin-top: 0.7em;
+    border: solid rgba(215, 201, 201, 0.733) 0.6px;
+  }
+  p{
+    font-size: 12px;
+  }
+  .pConstraints{
+    font-weight: 200;
+    margin-top: -2em;
+    margin-bottom: 2em;
+    display: flex;
+  }
+  .infoIcon{
+    width: 14px;
+    height: auto;
+  }
+  .account{
+    margin-top: 2em;
+  }
 
-.imgContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1em;
-}
-
-legend {
-  font-size: 30px;
-  margin: 0.5em;
-}
-
-.content {
-  margin-top: 1em; /* Adjust margin for spacing */
-  text-align: center; /* Center content */
-}
-
-.name, .email, .password, .password2 {
-  display: grid;
-  line-height: 15px;
-  font-size: 12px;
-  font-weight: 700;
-  max-width: 100%; /* Make sure elements don't overflow on small screens */
-}
-
-.line {
-  margin-top: 0.7em;
-  border: solid rgba(215, 201, 201, 0.733) 0.6px;
-}
-
-p {
-  font-size: 12px;
-}
-
-.pConstraints {
-  font-weight: 200;
-  margin-top: -2em;
-  margin-bottom: 2em;
-  display: flex;
-  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
-  justify-content: center; /* Center content horizontally */
-  gap: 10px; /* Add some spacing between elements */
-}
-
-
-
-.account {
-  margin-top: 2em;
-}
-
-.line2 {
-  margin-top: 0.7em;
-  border: solid rgba(215, 201, 201, 0.733) 0.6px;
-}
-
-.footer {
+  
+  .footer{
   display: flex;
   flex-wrap: wrap; /* Allow content to wrap on smaller screens */
   align-items: center;
