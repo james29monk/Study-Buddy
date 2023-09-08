@@ -45,14 +45,19 @@ const logger = winston.createLogger({
         new winston.transports.File({ filename: 'combined.log' }),
     ],
 });
-app.get('/users',async(req,res)=>{
+//POST MAN ROUTE FOR USER DATABASE
+app.get('/users',async (req,res) => {
     const allUsers = await User.findAll()
     res.send(allUsers)
 });
 
 
 
+
 //---------------------Get questions------------------------//
+
+
+//POST MAN ROUTE FOR ALL 
 
 app.get('/questions',async(req,res)=>{
     const allQuest = await questions.findAll()
@@ -62,11 +67,39 @@ res.send(allQuest)
 
 
 
+
 //-----------------------Get Home---------------------------//
 app.get('/home', (req, res) => {
 
     res.render('home')
+
+app.get('/home',async (req, res) => {
+
+ const question = await questions.findOne({where:{id:1}})
+    res.render('home', {questions: question})
 })
+
+app.get('/game', (req, res) => {
+    res.render('game')
+
+})
+
+app.get('/quiz', async (req, res) => {
+    try {
+        const questionsList = await questions.findAll();
+        const categoryList = await Categories.findAll();
+
+        console.log(questionsList);
+        console.log(categoryList);
+
+        res.render('quiz', { qList: questionsList, cList: categoryList });
+    } catch (err) {
+        console.error(err);
+        res.send('Error');
+    }
+});
+
+
 
 
 

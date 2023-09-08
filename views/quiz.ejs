@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <div onclick="" class="card">Science</div>
+    <% qList.forEach(question=> { %>
+        <p>
+            <%= question %>
+        </p>
+        <%})%>
+            <div class="category-column">
+                <div class="category-title">
+
+                    <!-- right here you will use ejs eyntax to pull in your category from the database. You will do this like you did the forEach loop above -->
+                    <% cList.forEach(categories => { %>
+                        <%= categories %>
+                    <% }) %>
+
+                </div>
+                <div class="card" data-question="The state of Hawaii is surrounded by what ocean?" answer-1="Pacific"
+                    answer-2="Atlantic" answer-3="Indian" data-correct="Pacific" data-value="100">
+                    <!-- right here you will use ejs eyntax to pull in your score from the database. You will do this like you did the forEach loop above -->
+                </div>
+                <div class="card" data-question="What is the name of the longest river in the world?" answer-1="Nile"
+                    answer-2="Amazon" answer-3="Mississippi" data-correct="Nile" data-value="300">
+                    <!-- right here you will use ejs eyntax to pull in your score from the database. You will do this like you did the forEach loop above -->
+                </div>
+                <div class="card" data-question="What is the name of the lines that run east to west across a map?"
+                    answer-1="Latitude" answer-2="Longitude" answer-3="Langitude" data-correct="Latitude"
+                    data-value="200">
+                    <!-- right here you will use ejs eyntax to pull in your score from the database. You will do this like you did the forEach loop above -->
+                </div>
+            </div>
+            <div class="category-column">
+                <div class="category-title">
+
+
+
+                    </div>
+                    <div class="card" data-question="What creates sound?" answer-1="Vibrations" answer-2="Noise" answer-3="Pressure" data-correct="Vibrations" data-value="100">100</div><div class="card" data-question="Which planet is closest to the sun?" answer-1="Mars" answer-2="Mercury" answer-3="Earth" data-correct="Mercury" data-value="200">
+
+
+                    </div>
+                    <div class="card" data-question="Color, density, volume, and mass are properties of?" answer-1="Water" answer-2="Matter" answer-3="Fire" data-correct="Matter" data-value="300">
+
+                    </div>
+                </div>
+
+
+</body>
+<script src="jeop.js"></script>
+
+</html>
