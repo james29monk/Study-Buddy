@@ -8,6 +8,7 @@ const { User, Categories, scores, games, questions, flashcards } = require('./mo
 app.use(express.json())
 app.use(express.static(__dirname + '/styles'));
 const path = require('path')
+const nodemailer= require('nodemailer')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
 const port = 3000
@@ -77,22 +78,12 @@ res.send(allQuest)
 
 //-----------------------Get Home---------------------------//
 
-<<<<<<< HEAD
-    res.render('home')
-})
-=======
->>>>>>> 16c48282bab8edf76c55b53c9cc34fd1174c8eb2
 
 
 
 
 
-<<<<<<< HEAD
-
-app.get('/quiz', async (req, res) => {
-=======
 app.get('/game', async (req, res) => {
->>>>>>> 16c48282bab8edf76c55b53c9cc34fd1174c8eb2
     try {
         const categories = await Categories.findAll();
         res.render('game', { categories });
