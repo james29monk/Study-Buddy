@@ -326,8 +326,6 @@ app.get('/login',async (req, res) => {
 
 
 app.get('/flashcards', async (req,res)=>{
-
-
    
     const userId = req.session.userId;
      const flashcardInfo = await flashcards.findOne({
@@ -337,7 +335,7 @@ app.get('/flashcards', async (req,res)=>{
     
       
 console.log("296", flashcardInfo)
-res.render('flashcards', {questions:flashcardInfo, answers: flashcardInfo});
+res.render('flashcards', {questions:flashcardInfo.dataValues.questions, answers: flashcardInfo.dataValues.answers});
 
 })
 
