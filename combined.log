@@ -842,3 +842,15 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:34:25 AM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{"email":"thetonyvu@yahoo.com","firstName":"Tony","lastName":"Vu","password":"Awsedr1113!","repassword":"Awsedr1113!"},"level":"info","method":"POST","parameters":{"0":"/register"},"timestamp":"9/11/2023, 10:39:39 AM","url":"/register"},"service":"user-service"}
 
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 2:32:57 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 2:36:27 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/password-recovery"},"timestamp":"9/11/2023, 2:44:32 PM","url":"/password-recovery"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/password-recovery"},"timestamp":"9/11/2023, 2:44:33 PM","url":"/password-recovery"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/password-recovery"},"timestamp":"9/11/2023, 2:44:35 PM","url":"/password-recovery"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/login"},"timestamp":"9/11/2023, 2:44:40 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 2:44:40 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/forgotten-password"},"timestamp":"9/11/2023, 2:44:42 PM","url":"/forgotten-password"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/login"},"timestamp":"9/11/2023, 2:44:50 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 2:44:50 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/forgotten-password"},"timestamp":"9/11/2023, 2:44:51 PM","url":"/forgotten-password"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/forgotten-password"},"timestamp":"9/11/2023, 2:45:16 PM","url":"/forgotten-password"},"service":"user-service"}
