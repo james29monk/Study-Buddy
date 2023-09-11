@@ -21,7 +21,7 @@
               <div class="flip-card-front">
                 <% if (questions !== null && typeof questions !== 'undefined') { %>
                     <p style="color: rgb(247, 24, 8);">
-                      <%= questions %>
+                      <%= questions.dataValues.questions %>
                     </p>
                   <% } else { %>
                     <p>
@@ -32,7 +32,7 @@
               <div class="flip-card-back">
                 <% if (answers !== null && typeof answers !== 'undefined') { %>
                     <p style="color: rgb(247, 24, 8);">
-                      <%= answers %>
+                      <%= answers.dataValues.answers %>
                     </p>
                   <% } else { %>
                     <p>

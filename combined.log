@@ -813,3 +813,10 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/10/2023, 1:58:44 PM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/10/2023, 3:24:00 PM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/10/2023, 10:42:41 PM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:15:50 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:16:53 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:20:29 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:20:33 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{"email":"James@monk.com","firstName":"James","lastName":"Monk","password":"James!2345","repassword":"James!2345"},"level":"info","method":"POST","parameters":{},"timestamp":"9/11/2023, 9:22:28 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:22:39 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:25:01 AM","url":"/login"},"service":"user-service"}
