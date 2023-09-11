@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const app = express();
 const winston = require("winston");
@@ -11,7 +12,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
 const port = 3000
 
-
+app.use(
+    session({
+      secret: 'James12345!@#$%', // Replace with your secret key
+      resave: false,
+      saveUninitialized: true,
+    })
+  );
 
 
 
@@ -69,15 +76,10 @@ res.send(allQuest)
 
 
 //-----------------------Get Home---------------------------//
-app.get('/home', (req, res) => {
 
-    res.render('home')})
 
-app.get('/home',async (req, res) => {
 
- const question = await questions.findOne({where:{id:1}})
-    res.render('home', {questions: question})
-})
+
 
 
 app.get('/game', async (req, res) => {
@@ -217,18 +219,22 @@ app.post('/register', async (req, res) => {
 });
 
 
+  
+
+
 
 
 
 //-------------------Login Post-------------------------------//
 
-app.post('/login', async (req, res) => {
+app.post('/login', async  (req, res) => {
+    
     const { email, password } = req.body;
 // Check if email and password are provided
   if (!email || !password) {
     return res.status(400).render('login',{failedMessage:'Email and password are required'});
   }
-
+  
     try {
        const user = await User.findOne({ where: { email: email } });
 
@@ -238,9 +244,9 @@ app.post('/login', async (req, res) => {
         const passwordMatch = await bcrypt.compare(password, user.password);
         
         if (passwordMatch) {
-            const userID = user.dataValues.id
-            console.log(userID)
-            res.redirect(`/flashcards/${userID}`)
+            req.session.userId = user.id;
+            console.log(user.firstName)
+            res.render('home',{ name:user.firstName})
 
 //   return res.render('home');
     } else {
@@ -254,52 +260,36 @@ app.post('/login', async (req, res) => {
 });
 
 
-
-
-
-
-
-
-app.get('/flashcards/:userID', async (req,res)=>{
-   const {userID} = req.params;
-     const flashcardInfo = await flashcards.findAll({
-        where: {user_id: userID}
-        
-    })
-
-    // console.log(userID);
-    console.log('252',flashcardInfo)
-    // const flashcardInfo = await flashcards.findAll();
-
-    // flashcardInfo.forEach(flashcard => {
-    //     console.log(`Flashcard ID: ${flashcard.id}`);
-    //     console.log(`Question: ${flashcard.question}`);
-    //     console.log(`Answer: ${flashcard.answer}`)})
-
-    res.render('flashcards', {cards:flashcardInfo})
+//-----------------------Get Home---------------------------//
+app.get('/login',async (req, res) => {
     
-})
-// app.get('/flashcards', async (req,res)=>{
+    const userId = req.session.userId;
+    const name = await User.findOne({where:{id:userId}})
+    console.log("287")
+    
+    res.render('home',{ name:name})})
+
+
+
+let fc ={}
+
+
+
+app.get('/flashcards', async (req,res)=>{
+
+
    
-//      const flashcardInfo = await flashcards.findOne({
-//         where: {id: user.dataValues.id}
-        
-//     })
-
-//     console.log(user.dataValues.id);
-//     // const flashcardInfo = await flashcards.findAll();
-
-//     // flashcardInfo.forEach(flashcard => {
-//     //     console.log(`Flashcard ID: ${flashcard.id}`);
-//     //     console.log(`Question: ${flashcard.question}`);
-//     //     console.log(`Answer: ${flashcard.answer}`)})
-
-//     res.render('flashcards', {cards:flashcardInfo})
+    const userId = req.session.userId;
+     const flashcardInfo = await flashcards.findAll({
+        where: {user_id: 13}
+       
+    })
     
-// })
+      fc = flashcardInfo
+console.log("296", flashcardInfo)
+res.render('flashcards', {questions: "test", answers: "test"});
 
-
-
+})
 
 
 
@@ -307,19 +297,27 @@ app.get('/flashcards/:userID', async (req,res)=>{
 
 
 //------------------Post Flashcards-------------------//
-app.post('/flashcards/:userId', async (req,res)=>{
- const {userID} = req.params;
-const {question, answer} = req.body;
-console.log("294", req.body)
-const cardInfo = await flashcards.create({
-    questions: question,
-    answers: answer,
-    user_id: req.params.userId
 
-});
-console.log((301))
-res.render(`/flashcards`,{userId:userID})
-});
+app.post('/flashcards', async (req,res)=>{
+
+    const userId = req.session.userId;
+console.log(userId)
+    //const {userID} = req.params;
+    const {question, answer} = req.body;
+    //console.log("294", userID)
+    const cardInfo = await flashcards.create({
+        questions: question,
+        answers: answer,
+        user_id: userId
+        
+    })
+ 
+//console.log("337",userID)
+res.render('flashcards')
+})
+
+
+
 
 
 

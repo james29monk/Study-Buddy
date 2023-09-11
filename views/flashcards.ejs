@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/flashcards.css">
 </head>
 <body>
-    <form class="container" action="/flashcards/:id" method="post">
+    <form class="container" action="/flashcards" method="post">
     <% { %>
         <div class="questions">
         <input  class="fquestion" type="text" name="question" placeholder="question" /><br><br></div>
@@ -18,20 +18,35 @@
         </form>
         <div class="flip-card">
             <div class="flip-card-inner">
-              <% cards.forEach(card => { %>
-                <% if (typeof card !== 'undefined') { %>
-                  <div class="flip-card-front">
-                    <p><%= card.dataValues.questions %></p>
-                  </div>
-                  <div class="flip-card-back">
-                    <p><%= card.dataValues.answers %></p>
-                  </div>
-                <% } %>
-              <% }); %>
+              <div class="flip-card-front">
+                <% if (questions !== null && typeof questions !== 'undefined') { %>
+                    <p style="color: rgb(247, 24, 8);">
+                      <%= questions %>
+                    </p>
+                  <% } else { %>
+                    <p>
+                      No question available
+                    </p>
+                  <% } %>
+              </div>
+              <div class="flip-card-back">
+                <% if (answers !== null && typeof answers !== 'undefined') { %>
+                    <p style="color: rgb(247, 24, 8);">
+                      <%= answers %>
+                    </p>
+                  <% } else { %>
+                    <p>
+                     no answer available
+                    </p>
+                  <% } %>
+              </div>
             </div>
           </div>
-          
 
+
+
+        
+          
          
 
 
