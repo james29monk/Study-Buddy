@@ -19,7 +19,26 @@ app.use(
       resave: false,
       saveUninitialized: true,
     })
-  );
+);
+
+
+
+  
+  // async..await is not allowed in global scope, must use a wrapper
+  async function main(email) {
+      const founduser=await User.findOne({where:{email:email}})
+    // send mail with defined transport object
+    console.log(founduser.dataValues.email)
+    const info = await transporter.sendMail({
+      from: '"Ian Voltaire" <ianvoltaire4@gmail.com>', // sender address
+      to: founduser.dataValues.email, // list of receivers
+      subject: "Hello", // Subject line
+      text: "Hello world?", // plain text body
+      html: '<p>Click <a href="http://localhost:3000/newpassword">here</a>to reset your password</p>', // html body
+    });
+  
+    console.log("Message sent: %s", info.to);
+  }
 
 
 
@@ -38,7 +57,27 @@ app.use(
 // on logout:
 // localStorage.removeItem('userId');
 
-
+app.all('*', (req, res, next) => {
+    try {
+        logger.info({
+            level: 'info',
+            method: req.method,
+            body: req.body,
+            url: req.url,
+            parameters: req.params,
+            timestamp: new Date().toLocaleString()
+        });
+        next();
+    } catch (error) {
+        logger.error({
+            level: 'error',
+            message: error.message,
+            stack: error.stack,
+            timestamp: new Date().toLocaleString()
+        });
+        res.status(500).send('Error');
+    }
+});
 
 
 
