@@ -713,10 +713,9 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 8:42:15 PM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 8:43:25 PM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/7/2023, 8:43:37 PM","url":"/register"},"service":"user-service"}
-<<<<<<< HEAD
+
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 1:48:52 PM","url":"/register"},"service":"user-service"}
-{"level":"info","message":{"body":{"email":"ianvoltaire4@gmail.com","firstName":"ian","lastName":"voltaire","password":"Lots5478!","repassword":"Lots5478!"},"level":"info","method":"POST","parameters":{},"timestamp":"9/8/2023, 1:50:24 PM","url":"/register"},"service":"user-service"}
-=======
+
 
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 8:42:51 AM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 8:43:34 AM","url":"/login"},"service":"user-service"}
@@ -762,10 +761,9 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:46:36 PM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:46:38 PM","url":"/login"},"service":"user-service"}
 
-<<<<<<< HEAD
->>>>>>> 88058340afc2258b1c62b16cb1c197ddf272f7e4
+
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:02:38 AM","url":"/login"},"service":"user-service"}
-=======
+
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 11:27:52 PM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/9/2023, 6:13:50 PM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/9/2023, 7:23:48 PM","url":"/login"},"service":"user-service"}
@@ -821,4 +819,26 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/10/2023, 1:58:44 PM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/10/2023, 3:24:00 PM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/10/2023, 10:42:41 PM","url":"/login"},"service":"user-service"}
->>>>>>> 16c48282bab8edf76c55b53c9cc34fd1174c8eb2
+
+
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:15:50 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:16:53 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:20:29 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:20:33 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{"email":"James@monk.com","firstName":"James","lastName":"Monk","password":"James!2345","repassword":"James!2345"},"level":"info","method":"POST","parameters":{},"timestamp":"9/11/2023, 9:22:28 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:22:39 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:25:01 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:01:29 AM","url":"/login"},"service":"user-service"}
+
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:41:37 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:46:36 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:46:50 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:46:52 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:47:12 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:47:24 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:57:16 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:57:25 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:34:21 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:34:25 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{"email":"thetonyvu@yahoo.com","firstName":"Tony","lastName":"Vu","password":"Awsedr1113!","repassword":"Awsedr1113!"},"level":"info","method":"POST","parameters":{"0":"/register"},"timestamp":"9/11/2023, 10:39:39 AM","url":"/register"},"service":"user-service"}
+
