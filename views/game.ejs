@@ -9,12 +9,17 @@
 <body>
     <h1 style="color: #FFBFBF;" >Are You Smarter Than A 5th Grader?</h1>
     <div id="game"></div>
-    
 
     <h2 style="color: #FFBFBF;">SCORE : <span id="score"></span></h2>
+    <div id ="gamez">
+        <% categories.forEach(category=> { %>
+            <p style="margin-left: 120px;">
+                <%= category.title %>
+            </p>
+            <%})%>
+    </div>
 
 
-
-    <script src="/jeop.js"></script>
+    <script src="/game.js"></script>
 </body>
 </html>
