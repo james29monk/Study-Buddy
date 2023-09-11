@@ -94,28 +94,25 @@ app.get('/game', async (req, res) => {
 
 //-----------------------------------------------------------------------------
 
-app.get('/password-recovery', async(rep,res)=>{
+app.get('/forgotten-password', async(rep,res)=>{
     const recoveryMessage=null;
     res.render('forgotten-password',{recoveryMessage})
 })
-app.post('/password-recovery', async (req, res) => {
-    const userEmail = req.body.email; // Extract the email from the form
+app.post('/forgotten-password', async (req, res) => {
+    const userEmail = req.body.email; 
   
-    // Validate the email (add more validation if needed)
     if (!userEmail) {
       const recoveryMessage = 'Please provide a valid email address.';
       return res.render('forgotten-password', { recoveryMessage });
     }
   
-    // Send an email with a password reset link to the user's email address
     const mailOptions = {
       from: 'your_email@gmail.com',
-      to: userEmail, // User's email address
+      to: userEmail, 
       subject: 'Password Reset Request',
-      text: 'Click the following link to reset your password: http://localhost/reset-password', // Replace with your reset password URL
+      text: 'Click the following link to reset your password: /forgotten-password', 
     };
   
-    // Send the email
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.log('Error sending email:', error);
@@ -128,12 +125,7 @@ app.post('/password-recovery', async (req, res) => {
       }
     });
   });
-  app.get('/password-form', async (req, res) => {
-    res.render('password-form');
-  });
-
-
-
+ 
 
 
 //----------------------Git register---------------------//
