@@ -8,6 +8,7 @@ const { User, Categories, scores, games, questions, flashcards } = require('./mo
 app.use(express.json())
 app.use(express.static(__dirname + '/styles'));
 const path = require('path')
+const nodemailer= require('nodemailer')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
 const port = 3000
@@ -373,6 +374,38 @@ res.render('flashcards', {questions: question, answers: answer});
 
 })
 
+
+app.post('/password-recovery', async (req, res) => {
+    const userEmail = req.body.email; // Extract the email from the form
+  
+    // Validate the email (add more validation if needed)
+    if (!userEmail) {
+      const recoveryMessage = 'Please provide a valid email address.';
+      return res.render('forgotten-password', { recoveryMessage });
+    }
+  
+    // Send an email with a password reset link to the user's email address
+    const mailOptions = {
+      from: 'your_email@gmail.com',
+      to: userEmail, // User's email address
+      subject: 'Password Reset Request',
+      text: 'Click the following link to reset your password: http://localhost/reset-password', // Replace with your reset password URL
+    };
+  
+    // Send the email
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log('Error sending email:', error);
+        const recoveryMessage = 'Error sending password recovery email.';
+        return res.render('forgotten-password', { recoveryMessage });
+      } else {
+        console.log('Password reset email sent:', info.response);
+        const recoveryMessage = 'Password recovery instructions sent to your email.';
+        return res.render('forgotten-password', { recoveryMessage });
+      }
+    });
+  });
+  
 
 
 
