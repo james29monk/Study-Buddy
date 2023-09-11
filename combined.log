@@ -824,3 +824,8 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:34:21 AM","url":"/login"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:34:25 AM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{"email":"thetonyvu@yahoo.com","firstName":"Tony","lastName":"Vu","password":"Awsedr1113!","repassword":"Awsedr1113!"},"level":"info","method":"POST","parameters":{"0":"/register"},"timestamp":"9/11/2023, 10:39:39 AM","url":"/register"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/"},"timestamp":"9/11/2023, 10:43:24 AM","url":"/"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/login"},"timestamp":"9/11/2023, 10:43:24 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:43:24 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{"0":"/flashcards"},"timestamp":"9/11/2023, 10:43:29 AM","url":"/flashcards"},"service":"user-service"}
+{"level":"info","message":{"body":{"answer":"answer","question":"food"},"level":"info","method":"POST","parameters":{"0":"/flashcards"},"timestamp":"9/11/2023, 10:43:37 AM","url":"/flashcards"},"service":"user-service"}
