@@ -820,3 +820,4 @@
 {"level":"info","message":{"body":{"email":"James@monk.com","firstName":"James","lastName":"Monk","password":"James!2345","repassword":"James!2345"},"level":"info","method":"POST","parameters":{},"timestamp":"9/11/2023, 9:22:28 AM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:22:39 AM","url":"/register"},"service":"user-service"}
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:25:01 AM","url":"/login"},"service":"user-service"}
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 10:01:29 AM","url":"/login"},"service":"user-service"}

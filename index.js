@@ -319,7 +319,7 @@ app.get('/flashcards', async (req,res)=>{
    
     const userId = req.session.userId;
      const flashcardInfo = await flashcards.findOne({
-        where: {user_id: 40}
+        where: {user_id: 36}
        
     })
     
@@ -346,12 +346,21 @@ console.log(userId)
     const cardInfo = await flashcards.create({
         questions: question,
         answers: answer,
-        user_id: 40
+        user_id: 36
         
     })
- 
-//console.log("337",userID)
-res.render('flashcards')
+
+
+    
+    const flashcardInfo = await flashcards.findOne({
+       where: {user_id: 36}
+      
+   })
+   
+     
+console.log("296", flashcardInfo)
+res.render('flashcards', {questions: question, answers: answer});
+
 })
 
 
