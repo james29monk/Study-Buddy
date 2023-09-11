@@ -6,7 +6,7 @@ module.exports = {
   
      await queryInterface.bulkInsert('questions', [
     {
-      questions: 'The state of Hawaii is surrounded by what ocean? ',
+      questions: 'The state of Hawaii is surrounded by what ocean?',
       answer: 'Pacific',
       category_id: 1
 
@@ -51,7 +51,7 @@ module.exports = {
       category_id: 2
     },
     {
-      questions: 'An electrical current is made up of what kind of particles? ',
+      questions: 'An electrical current is made up of what kind of particles?',
       answer: 'Electrons',
       category_id: 2
     },
