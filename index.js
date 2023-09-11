@@ -38,27 +38,7 @@ app.use(
 // localStorage.removeItem('userId');
 
 
-app.all('*', (req, res, next) => {
-    try {
-        logger.info({
-            level: 'info',
-            method: req.method,
-            body: req.body,
-            url: req.url,
-            parameters: req.params,
-            timestamp: new Date().toLocaleString()
-        });
-        next();
-    } catch (error) {
-        logger.error({
-            level: 'error',
-            message: error.message,  
-            stack: error.stack,     
-            timestamp: new Date().toLocaleString()
-        });
-        res.status(500).send('Error');
-    }
-});
+
 
 
 //lockal storegae 
@@ -114,28 +94,25 @@ app.get('/game', async (req, res) => {
 
 //-----------------------------------------------------------------------------
 
-app.get('/password-recovery', async(rep,res)=>{
+app.get('/forgotten-password', async(rep,res)=>{
     const recoveryMessage=null;
     res.render('forgotten-password',{recoveryMessage})
 })
-app.post('/password-recovery', async (req, res) => {
-    const userEmail = req.body.email; // Extract the email from the form
+app.post('/forgotten-password', async (req, res) => {
+    const userEmail = req.body.email; 
   
-    // Validate the email (add more validation if needed)
     if (!userEmail) {
       const recoveryMessage = 'Please provide a valid email address.';
       return res.render('forgotten-password', { recoveryMessage });
     }
   
-    // Send an email with a password reset link to the user's email address
     const mailOptions = {
       from: 'your_email@gmail.com',
-      to: userEmail, // User's email address
+      to: userEmail, 
       subject: 'Password Reset Request',
-      text: 'Click the following link to reset your password: http://localhost/reset-password', // Replace with your reset password URL
+      text: 'Click the following link to reset your password: /forgotten-password', 
     };
   
-    // Send the email
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.log('Error sending email:', error);
@@ -148,16 +125,19 @@ app.post('/password-recovery', async (req, res) => {
       }
     });
   });
-  app.get('/password-form', async (req, res) => {
-    res.render('password-form');
-  });
-
-
-
+ 
 
 
 //----------------------Git register---------------------//
 app.get('/register', (req, res) => {
+    logger.info({
+        level: 'info',
+        method: req.method,
+        body: req.body,
+        url: req.url,
+        parameters: req.params,
+        timestamp: new Date().toLocaleString()
+    })
     res.render('register')
 })
 
@@ -326,6 +306,8 @@ app.get('/login',async (req, res) => {
 
 
 app.get('/flashcards', async (req,res)=>{
+
+
    
     const userId = req.session.userId;
      const flashcardInfo = await flashcards.findOne({
@@ -335,7 +317,7 @@ app.get('/flashcards', async (req,res)=>{
     
       
 console.log("296", flashcardInfo)
-res.render('flashcards', {questions:flashcardInfo.dataValues.questions, answers: flashcardInfo.dataValues.answers});
+res.render('flashcards', {questions:flashcardInfo, answers: flashcardInfo});
 
 })
 
