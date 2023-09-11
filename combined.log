@@ -763,3 +763,4 @@
 {"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/8/2023, 3:46:38 PM","url":"/login"},"service":"user-service"}
 
 >>>>>>> 88058340afc2258b1c62b16cb1c197ddf272f7e4
+{"level":"info","message":{"body":{},"level":"info","method":"GET","parameters":{},"timestamp":"9/11/2023, 9:02:38 AM","url":"/login"},"service":"user-service"}
