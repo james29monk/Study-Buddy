@@ -130,16 +130,28 @@ app.post('/forgotten-password', async (req, res) => {
 
 //----------------------Git register---------------------//
 app.get('/register', (req, res) => {
-    logger.info({
-        level: 'info',
-        method: req.method,
-        body: req.body,
-        url: req.url,
-        parameters: req.params,
-        timestamp: new Date().toLocaleString()
-    })
-    res.render('register')
-})
+    try {
+       
+        logger.info({
+            level: 'info',
+            method: req.method,
+            body: req.body,
+            url: req.url,
+            parameters: req.params,
+            timestamp: new Date().toLocaleString()
+        });
+
+        res.render('register');
+    } catch (error) {
+        logger.error({
+            level: 'error',
+            message: error.message,  
+            stack: error.stack,      
+            timestamp: new Date().toLocaleString()
+        });
+        res.status(500).send('Error');
+    }
+});
 
 
 //-------------------------get login----------------//
