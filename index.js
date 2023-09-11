@@ -356,6 +356,33 @@ res.render('flashcards', {questions: question, answers: answer});
 
 })
 
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    port: 465,
+    secure: true,
+    auth: {
+      // TODO: replace `user` and `pass` values from <https://forwardemail.net>
+      user: "ianvoltaire4@gmail.com",
+      pass: "stqypaqlgadtkcpg",
+    },
+  });
+  
+  // async..await is not allowed in global scope, must use a wrapper
+  async function main(email) {
+      const founduser=await User.findOne({where:{email:email}})
+    // send mail with defined transport object
+    console.log(founduser.dataValues.email)
+    const info = await transporter.sendMail({
+      from: '"Ian Voltaire" <ianvoltaire4@gmail.com>', // sender address
+      to: founduser.dataValues.email, // list of receivers
+      subject: "Hello", // Subject line
+      text: "Hello world?", // plain text body
+      html: '<p>Click <a href="http://localhost:3000/newpassword">here</a>to reset your password</p>', // html body
+    });
+  
+    console.log("Message sent: %s", info.to);
+  }
+
 
 app.post('/password-recovery', async (req, res) => {
     const userEmail = req.body.email; // Extract the email from the form
