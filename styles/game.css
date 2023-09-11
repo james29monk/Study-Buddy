@@ -55,6 +55,14 @@ font-family: 'Luckiest Guy', cursive;}
     
 }
 
+.fourth-button {
+    background-color: #76f04e;
+    border-radius:20px;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 2%;
+    
+}
+
 .category-title {
     text-align: center;
     color: #FFBFBF;
@@ -69,4 +77,11 @@ font-family: 'Luckiest Guy', cursive;}
 
 .wrong-answer{
     background-color: red;
+}
+
+#gamez{
+    display: flex;
+    margin: 1px;
+    color: #FFBFBF;
+
 }

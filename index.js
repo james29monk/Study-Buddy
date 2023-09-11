@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/styles'));
 const path = require('path')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
-const port = 8080
+const port = 3000
 
 
 
@@ -71,7 +71,7 @@ res.send(allQuest)
 //-----------------------Get Home---------------------------//
 app.get('/home', (req, res) => {
 
-    res.render('home')
+    res.render('home')})
 
 app.get('/home',async (req, res) => {
 
@@ -79,25 +79,16 @@ app.get('/home',async (req, res) => {
     res.render('home', {questions: question})
 })
 
-app.get('/game', (req, res) => {
-    res.render('game')
 
-})
-
-app.get('/quiz', async (req, res) => {
+app.get('/game', async (req, res) => {
     try {
-        const questionsList = await questions.findAll();
-        const categoryList = await Categories.findAll();
-
-        res.render('quiz', { qList: questionsList, cList: categoryList });
+        const categories = await Categories.findAll();
+        res.render('game', { categories });
     } catch (err) {
         console.error(err);
         res.send('error');
     }
 });
-
-
-
 
 
 
@@ -117,11 +108,6 @@ app.get('/register', (req, res) => {
     })
     res.render('register')
 })
-
-
-
-
-
 
 
 //-------------------------get login----------------//
@@ -165,14 +151,14 @@ app.post('/register', async (req, res) => {
 // Check if firstName and lastName contain only letters
     const nameRegex = /^[A-Za-z]+$/; // This regex allows only letters (both upper and lower case)
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-     // Validate email format and ending
+// Validate email format and ending
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(com|net|gov|edu)$/;
 
-     // Check if password contains a URL
+// Check if password contains a URL
      if (containsURL(password)) {
         return res.status(400).render('register', { failedMessage: 'Password should not contain URLs' });
     }
-     // Check if password contains a special character
+// Check if password contains a special character
      if (!containsSpecialCharacter(password)) {
         const specialCharacters = '@$!%*?&'; // List of possible special characters
         return res.status(400).render('register', { failedMessage: `Password must include at least one special character (${specialCharacters}).` });
@@ -200,7 +186,7 @@ app.post('/register', async (req, res) => {
     const existingEmail = await User.findOne({ where: { email: email } });
 
   if (existingEmail) {
-    return res.status(400).send('Email already registered');
+        return res.status(400).render('register', {failedMessage: 'Password do not match'} );
     
   }
     try {
@@ -238,7 +224,7 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    // Check if email and password are provided
+// Check if email and password are provided
   if (!email || !password) {
     return res.status(400).render('login',{failedMessage:'Email and password are required'});
   }
@@ -256,9 +242,9 @@ app.post('/login', async (req, res) => {
             console.log(userID)
             res.redirect(`/flashcards/${userID}`)
 
-    //   return res.render('home');
+//   return res.render('home');
     } else {
-      // Passwords don't match, authentication failed
+// Passwords don't match, authentication failed
       return res.status(401).render('login',{failedMessage:'Invalid email or password'});
     }
   } catch (error) {
@@ -330,13 +316,10 @@ const cardInfo = await flashcards.create({
     answers: answer,
     user_id: req.params.userId
 
-})
+});
 console.log((301))
 res.render(`/flashcards`,{userId:userID})
-})
-
-
-
+});
 
 
 
