@@ -68,3 +68,8 @@ Categories: [Geography, Science, English and Language Arts, Social Studies, Math
 Point Values: [100, 200, 300, 400] 
 
 Difficulty goes from easy, medium , hard, and extreme for the highest possible point value!
+
+
+
+
+
